@@ -1,4 +1,4 @@
-FROM golang:1.5-alpine3.12 AS compiler
+FROM golang:1.15-alpine3.12 AS compiler
 
 WORKDIR /builder
 ADD . ./
