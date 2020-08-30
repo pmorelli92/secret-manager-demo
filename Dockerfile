@@ -6,6 +6,6 @@ ADD . ./
 RUN CGO_ENABLED=0 go build main.go
 
 FROM scratch
-COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+COPY --from=compiler /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=compiler /builder/main /main
 ENTRYPOINT ["/main"]
